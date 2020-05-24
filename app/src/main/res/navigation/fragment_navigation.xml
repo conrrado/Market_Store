@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_navigation"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.ccamacho.marketstore.view.ProductListFragment"
+        android:label="Market Store"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_to_purchaseListFragment"
+            app:destination="@id/purchaseListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.ccamacho.marketstore.view.ProductDetailFragment"
+        android:label="Detalhes"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="product"
+            app:argType="com.ccamacho.marketstore.model.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseListFragment"
+        android:name="com.ccamacho.marketstore.view.PurchaseListFragment"
+        android:label="Lista de Compras"
+        tools:layout="@layout/fragment_purchase_list">
+        <argument
+            android:name="purchase"
+            app:argType="com.ccamacho.marketstore.model.Purchase" />
+    </fragment>
+</navigation>
